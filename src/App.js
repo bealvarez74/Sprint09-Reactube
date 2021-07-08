@@ -3,6 +3,7 @@ import SearchBar from './components/SearchBar';
 import youtube from './apis/youtube';
 import VideoList from './components/VideoList';
 import VideoDetail from './components/VideoDetail';
+import {Body, Header, Content, Maincontent, Sidebar} from './styled';
 
 
 class App extends React.Component {
@@ -29,12 +30,14 @@ class App extends React.Component {
     }
 
   render() {
-    return (
-      <div>
-        <SearchBar handleFormSubmit={this.handleSubmit}/>
-        <VideoDetail video={this.state.selectedVideo}/>
-        <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
-      </div>
+    return (    
+        <Body>
+          <Header><SearchBar handleFormSubmit={this.handleSubmit}/></Header>
+          <Content>
+            <Maincontent><VideoDetail video={this.state.selectedVideo}/></Maincontent>
+            <Sidebar><VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/> </Sidebar>
+          </Content>
+        </Body>
     )
   }
 }

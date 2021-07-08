@@ -1,5 +1,6 @@
 
 import React from 'react';
+import {Searchinput} from '../styled';
 
 class SearchBar extends React.Component{
     handleChange = (event) => {
@@ -14,10 +15,13 @@ class SearchBar extends React.Component{
 
 render(){
     return(
-        <form onSubmit={this.handleSubmit}>
-            <label htmlFor='video-search'>Busca Video</label>
-            <input onChange={this.handleChange} name='video-search' type="text" placeholder="Buscar.."/>
-        </form>
+        <div>
+            <h2>Buscador de Videos Youtube</h2>
+            <form onSubmit={this.handleSubmit}>   
+                <Searchinput onChange={this.handleChange} name='video-search' type="text" placeholder="Buscar Video.."></Searchinput>
+    
+            </form>
+        </div>
     )
 }
 }
